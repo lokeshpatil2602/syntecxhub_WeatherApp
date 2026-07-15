@@ -1,0 +1,43 @@
+/* ============================================================
+   index.css — Global reset & base tokens
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm:  6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.12);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.18);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.28);
+  --transition: 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+  background-attachment: fixed;
+}
+
+/* ── Weather theme backgrounds ─────────────────────────────── */
+body.dark { background: #0f172a; }
+body.light { background: #e8f4fd; }
+
+body.theme-clear-day   { background: linear-gradient(135deg,#1a6ef5 0%,#56c6f5 50%,#fdd86f 100%); }
+body.theme-clear-night { background: linear-gradient(135deg,#0d0d2b 0%,#1a1a4e 50%,#2d2d7a 100%); }
+body.theme-clouds      { background: linear-gradient(135deg,#4a5568 0%,#718096 60%,#a0aec0 100%); }
+body.theme-rain        { background: linear-gradient(135deg,#1a2a4a 0%,#2d4a7a 50%,#4a6fa5 100%); }
+body.theme-thunderstorm{ background: linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%); }
+body.theme-snow        { background: linear-gradient(135deg,#c8d6e5 0%,#dfe6ed 60%,#f4f8fb 100%); }
+body.theme-mist        { background: linear-gradient(135deg,#6b7a8d 0%,#a8b9cc 60%,#c5d5e8 100%); }
+body.theme-default     { background: linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#1a1a2e 100%); }
+
+button { cursor: pointer; border: none; background: none; font-family: var(--font); }
+img    { display: block; }
+a      { text-decoration: none; }
